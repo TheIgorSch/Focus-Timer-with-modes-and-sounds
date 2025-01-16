@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!DOCTYPE html >
+<html lang="pt-br" class="">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,41 +7,53 @@
  <link rel="stylesheet" href="style.css">
  <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
- <script type="module" src="./src/main.js"></script>
-  
+ <script type="module" src="./src/main.js" defer></script>
+
+ 
  <title>Focus Timer 2.0</title>
 </head>
 <body>
   <div id="app">
+    <div id="controls">
+      
+      <section id="timer" class="flex">
+        <span id="minutes">00</span>
+        <span>:</span>
+        <span id="seconds">00</span>
+      </section>
+      
+      <section id="controls" class="flex">
+        <button data-action="toggleRunning" class="ph ph-play-circle" >
+          <span class="sr-only">play</span>
+        </button>
+        <button data-action="toggleRunning" class="ph ph-pause-circle" >
+          <span class="sr-only">pause</span>
+        </button>
+        <button data-action="reset" class="ph ph-stop-circle" >
+          <span class="sr-only">stop</span>
+        </button>
+        <button data-action="add" class="ph ph-plus-circle">
+          <span class="sr-only">add 5 minutes</span>
+        </button>
+        <button data-action="subtract" class="ph ph-minus-circle">
+          <span class="sr-only">take 5 minutes</span>
+        </button>        
+      </section>
+    </div>
     <div id="buttons">
-      <button id="tree">
-        <span>Ativar modo floresta</span>
+      <button id="tree" class="ph ph-tree">
+        <span class="sr-only">Ativar modo floresta</span>
       </button>
-      <button id="rain">
-        <span>Ativar modo chuva</span>
+      <button id="rain" class="ph ph-cloud-snow">
+        <span class="sr-only">Ativar modo chuva</span>
       </button>
-      <button id="cafeteria">
-        <span>Ativar modo cafeteria</span>
+      <button id="coffeeshop" class="ph ph-storefront">
+        <span class="sr-only">Ativar modo cafeteria</span>
       </button>
-      <button id="fireplace">
-        <span>Ativar modo lareira</span>
+      <button id="fireplace" class="ph ph-fire">
+        <span class="sr-only">Ativar modo lareira</span>
       </button>
     </div>
-
-    <section id="timer">
-      <span id="minutes">00</span>
-      <span>:</span>
-      <span id="seconds">00</span>
-    </section>
-
-    <section id="controls">
-      <button class="ph ph-play-circle">play</button>
-      <button class="ph ph-pause-circle">pau e</button>
-      <button class="ph ph-stop-circle">stop</button>
-      <button class="ph ph-plus-circle">plus</button>
-      <button class="ph ph-minus-circle">minus</button>
-
-    </section>
   </div>
   
 </body>
