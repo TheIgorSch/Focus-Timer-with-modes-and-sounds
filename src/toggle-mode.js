@@ -5,13 +5,21 @@ buttonToggle.forEach(button => {
     console.log(`Button clicked: ${button.id}`);
 
     const isRunning = document.documentElement.classList.contains('running')
-    
-    document.documentElement.className = isRunning ? "running" : ""
-    document.documentElement.classList.add(button.id)
-    stopAllSounds()
-    if (sounds[button.id]) {
-      sounds[button.id].play()
+    const isActive = document.documentElement.classList.contains(button.id)
+
+    if (isActive) {
+      document.documentElement.className = isRunning ? "running" : ""
+      stopAllSounds()
+    } else {
+      document.documentElement.className = isRunning ? "running" : ""
+      document.documentElement.classList.add(button.id)
+      stopAllSounds()
+      if (sounds[button.id]) {
+        sounds[button.id].play()
+      }
+
     }
+    
 
   })
 })
