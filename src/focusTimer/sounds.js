@@ -1,0 +1,1 @@
+export const finish = new Audio("./assets/kichen-timer.mp3")
